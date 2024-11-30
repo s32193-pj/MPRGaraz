@@ -1,9 +1,8 @@
 package com.example.MBR.entities;
 
-import org.joda.time.DateTime;
 
 import java.util.ArrayList;
-import java.util.Date;
+
 
 public interface Car {
     public String getType();

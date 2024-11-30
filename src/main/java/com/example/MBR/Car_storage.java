@@ -4,7 +4,6 @@ import com.example.MBR.entities.Car;
 import com.example.MBR.entities.Honda;
 import com.example.MBR.entities.Mercedes;
 import com.example.MBR.tools.Car_storage_comparator;
-import org.joda.time.Interval;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -25,20 +24,13 @@ public class Car_storage {
 
     public void rent_car(Car car) {
         boolean rented = false;
+
         for (int i = 0; i < cars.size(); i++) {
             if (comparator.is_the_same(cars.get(i), car)) {
 
-                Interval interval;
-                Interval car_interval = new Interval(car.get_dates().get(0).getDate_from(),car.get_dates().get(0).getDate_to());
-
                 for (int j = 0; j < cars.get(i).get_dates().size(); j++) {
 
-                    interval = new Interval(cars.get(i).get_dates().get(j).getDate_from(), cars.get(i).get_dates().get(j).getDate_to());
-
-                    if (interval.contains(car_interval)) {
-                        rented = true;
-                    }
-                    if (interval.contains(car_interval)) {
+                    if (comparator.overlap(cars.get(i).get_dates().get(j), car.get_dates().get(0)) >0) {
                         rented = true;
                     }
                 }
@@ -50,7 +42,7 @@ public class Car_storage {
             for(int i = 0; i < cars.size(); i++){
                 if(comparator.is_the_same(cars.get(i), car)){
                     cars.get(i).rent(car.get_dates().get(0));
-                    System.out.println(cars.get(i).get_dates().get(0).toString());
+                    System.out.println(car.get_dates().toString());
                 }
             }
             System.out.println("Car now rented");

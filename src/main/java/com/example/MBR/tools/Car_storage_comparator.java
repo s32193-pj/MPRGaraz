@@ -1,6 +1,7 @@
 package com.example.MBR.tools;
 
 import com.example.MBR.entities.Car;
+import com.example.MBR.entities.Rent_period;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -21,5 +22,12 @@ public class Car_storage_comparator {
 
         return is_the_same;
     }
+
+    public long overlap(Rent_period o1, Rent_period o2) {
+
+        return Math.min(o1.getDate_to().toEpochDay(), o2.getDate_to().toEpochDay()) -
+                Math.max(o1.getDate_from().toEpochDay(), o2.getDate_from().toEpochDay());
+    }
+
 
 }
