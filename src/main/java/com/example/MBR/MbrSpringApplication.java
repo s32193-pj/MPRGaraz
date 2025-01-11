@@ -14,19 +14,19 @@ public class MbrSpringApplication {
 
     public MbrSpringApplication(Car_storage_controller car_storage_controller) {
 
-        Car test_car = new Mercedes();
-        Rent_period rent_period = new Rent_period();
-        rent_period.setDate_from(LocalDate.of(2024,8,10));
-        rent_period.setDate_to(LocalDate.of(2024,8,12));
-        test_car.rent(rent_period);
-        test_car.setId(1);
-
-        Car test_car2 = new Mercedes();
-        Rent_period rent_period2 = new Rent_period();
-        rent_period2.setDate_from(LocalDate.of(2024,8,13));
-        rent_period2.setDate_to(LocalDate.of(2024,8,14));
-        test_car2.rent(rent_period2);
-        test_car2.setId(1);
+//        Car test_car = new Mercedes();
+//        Rent_period rent_period = new Rent_period();
+//        rent_period.setDate_from(LocalDate.of(2024,8,10));
+//        rent_period.setDate_to(LocalDate.of(2024,8,12));
+//        test_car.rent(rent_period);
+//        test_car.setId(1);
+//
+//        Car test_car2 = new Mercedes();
+//        Rent_period rent_period2 = new Rent_period();
+//        rent_period2.setDate_from(LocalDate.of(2024,8,13));
+//        rent_period2.setDate_to(LocalDate.of(2024,8,14));
+//        test_car2.rent(rent_period2);
+//        test_car2.setId(1);
 
 //        Car test_car3 = new Mercedes();
 //        Rent_period rent_period3 = new Rent_period();
@@ -65,8 +65,8 @@ public class MbrSpringApplication {
 
 
 //        car_storage_controller.rent_car(test_car);
-        car_storage_controller.rent_car(test_car);
-        car_storage_controller.rent_car(test_car2);
+//        car_storage_controller.rent_car(test_car);
+//        car_storage_controller.rent_car(test_car2);
 //        car_storage_controller.rent_car(test_car3);
 //        car_storage_controller.rent_car(test_car4);
 //        car_storage_controller.rent_car(test_car5);
